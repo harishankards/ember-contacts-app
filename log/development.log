@@ -1,0 +1,761 @@
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (108.6ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (133.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateContacts (20111230160032)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "contacts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20111230160032')[0m
+  [1m[35m (127.8ms)[0m  commit transaction
+Migrating to AddContactFields (20120913181318)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "contacts" ADD "email" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "contacts" ADD "notes" text[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20120913181318')
+  [1m[36m (142.1ms)[0m  [1mcommit transaction[0m
+Migrating to CreatePhoneNumbers (20120924225330)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "phone_numbers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "number" varchar(255), "contact_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20120924225330')
+  [1m[36m (130.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-29 22:10:16 +0530
+Connecting to database specified by database.yml
+Processing by ApplicationController#index as HTML
+  Rendered application/index.html.erb within layouts/application (1.8ms)
+Compiled application.css  (2427ms)  (pid 8744)
+Compiled jquery.js  (4ms)  (pid 8744)
+Compiled handlebars.js  (1ms)  (pid 8744)
+Compiled ember.js  (14ms)  (pid 8744)
+Compiled ember-data.js  (4ms)  (pid 8744)
+Compiled md5.js  (0ms)  (pid 8744)
+Compiled jquery_ujs.js  (0ms)  (pid 8744)
+Compiled lib/ember-extensions.js  (0ms)  (pid 8744)
+Compiled store.js  (0ms)  (pid 8744)
+Compiled models/contact.js  (0ms)  (pid 8744)
+Compiled models/phone_number.js  (0ms)  (pid 8744)
+Compiled controllers/contact_controller.js  (0ms)  (pid 8744)
+Compiled controllers/contact_edit_controller.js  (0ms)  (pid 8744)
+Compiled controllers/contacts_controller.js  (0ms)  (pid 8744)
+Compiled controllers/contacts_new_controller.js  (0ms)  (pid 8744)
+Compiled views/contact_edit_view.js  (0ms)  (pid 8744)
+Compiled views/contact_in_list_view.js  (0ms)  (pid 8744)
+Compiled views/contact_view.js  (0ms)  (pid 8744)
+Compiled views/contacts_new_view.js  (0ms)  (pid 8744)
+Compiled views/contacts_view.js  (0ms)  (pid 8744)
+Compiled helpers/forms.js  (0ms)  (pid 8744)
+Compiled templates/_contact_edit_fields.js  (81ms)  (pid 8744)
+Compiled templates/application.js  (12ms)  (pid 8744)
+Compiled templates/contact.js  (19ms)  (pid 8744)
+Compiled templates/contact_edit.js  (8ms)  (pid 8744)
+Compiled templates/contact_in_list.js  (8ms)  (pid 8744)
+Compiled templates/contacts.js  (11ms)  (pid 8744)
+Compiled templates/contacts/new.js  (8ms)  (pid 8744)
+Compiled router.js  (0ms)  (pid 8744)
+Compiled routes/contact_route.js  (0ms)  (pid 8744)
+Compiled routes/contacts_new_route.js  (0ms)  (pid 8744)
+Compiled routes/contacts_route.js  (0ms)  (pid 8744)
+Compiled routes/index_route.js  (0ms)  (pid 8744)
+Compiled app.js  (285ms)  (pid 8744)
+Compiled application.js  (385ms)  (pid 8744)
+Completed 200 OK in 2915ms (Views: 2914.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-29 22:10:19 +0530
+Served asset /application.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-29 22:10:19 +0530
+Served asset /jquery_ujs.js - 200 OK (16ms)
+
+
+Started GET "/assets/app.js?body=1" for 127.0.0.1 at 2014-05-29 22:10:19 +0530
+Served asset /app.js - 200 OK (41ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-29 22:10:19 +0530
+Served asset /jquery.js - 200 OK (4ms)
+
+
+Started GET "/assets/ember.js?body=1" for 127.0.0.1 at 2014-05-29 22:10:19 +0530
+Served asset /ember.js - 200 OK (37ms)
+
+
+Started GET "/assets/handlebars.js?body=1" for 127.0.0.1 at 2014-05-29 22:10:19 +0530
+Served asset /handlebars.js - 200 OK (2ms)
+
+
+Started GET "/assets/ember-data.js?body=1" for 127.0.0.1 at 2014-05-29 22:10:19 +0530
+Served asset /ember-data.js - 200 OK (5ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2014-05-29 22:10:19 +0530
+Served asset /store.js - 200 OK (12ms)
+
+
+Started GET "/assets/lib/ember-extensions.js?body=1" for 127.0.0.1 at 2014-05-29 22:10:19 +0530
+Served asset /lib/ember-extensions.js - 200 OK (4ms)
+
+
+Started GET "/assets/md5.js?body=1" for 127.0.0.1 at 2014-05-29 22:10:19 +0530
+Served asset /md5.js - 200 OK (2ms)
+
+
+Started GET "/assets/models/contact.js?body=1" for 127.0.0.1 at 2014-05-29 22:10:19 +0530
+Served asset /models/contact.js - 200 OK (8ms)
+
+
+Started GET "/assets/controllers/contact_controller.js?body=1" for 127.0.0.1 at 2014-05-29 22:10:19 +0530
+Served asset /controllers/contact_controller.js - 200 OK (2ms)
+
+
+Started GET "/assets/models/phone_number.js?body=1" for 127.0.0.1 at 2014-05-29 22:10:19 +0530
+Served asset /models/phone_number.js - 200 OK (2ms)
+
+
+Started GET "/assets/controllers/contact_edit_controller.js?body=1" for 127.0.0.1 at 2014-05-29 22:10:19 +0530
+Served asset /controllers/contact_edit_controller.js - 200 OK (3ms)
+
+
+Started GET "/assets/controllers/contacts_controller.js?body=1" for 127.0.0.1 at 2014-05-29 22:10:19 +0530
+Served asset /controllers/contacts_controller.js - 200 OK (6ms)
+
+
+Started GET "/assets/controllers/contacts_new_controller.js?body=1" for 127.0.0.1 at 2014-05-29 22:10:19 +0530
+Served asset /controllers/contacts_new_controller.js - 200 OK (7ms)
+
+
+Started GET "/assets/views/contact_edit_view.js?body=1" for 127.0.0.1 at 2014-05-29 22:10:19 +0530
+Served asset /views/contact_edit_view.js - 200 OK (2ms)
+
+
+Started GET "/assets/views/contact_in_list_view.js?body=1" for 127.0.0.1 at 2014-05-29 22:10:19 +0530
+Served asset /views/contact_in_list_view.js - 200 OK (2ms)
+
+
+Started GET "/assets/views/contact_view.js?body=1" for 127.0.0.1 at 2014-05-29 22:10:19 +0530
+Served asset /views/contact_view.js - 200 OK (2ms)
+
+
+Started GET "/assets/views/contacts_new_view.js?body=1" for 127.0.0.1 at 2014-05-29 22:10:19 +0530
+Served asset /views/contacts_new_view.js - 200 OK (2ms)
+
+
+Started GET "/assets/views/contacts_view.js?body=1" for 127.0.0.1 at 2014-05-29 22:10:19 +0530
+Served asset /views/contacts_view.js - 200 OK (2ms)
+
+
+Started GET "/assets/helpers/forms.js?body=1" for 127.0.0.1 at 2014-05-29 22:10:19 +0530
+Served asset /helpers/forms.js - 200 OK (2ms)
+
+
+Started GET "/assets/templates/_contact_edit_fields.js?body=1" for 127.0.0.1 at 2014-05-29 22:10:19 +0530
+Served asset /templates/_contact_edit_fields.js - 200 OK (9ms)
+
+
+Started GET "/assets/templates/contacts/new.js?body=1" for 127.0.0.1 at 2014-05-29 22:10:19 +0530
+Served asset /templates/contacts/new.js - 200 OK (2ms)
+
+
+Started GET "/assets/templates/contact.js?body=1" for 127.0.0.1 at 2014-05-29 22:10:19 +0530
+Served asset /templates/contact.js - 200 OK (2ms)
+
+
+Started GET "/assets/templates/contact_edit.js?body=1" for 127.0.0.1 at 2014-05-29 22:10:20 +0530
+Served asset /templates/contact_edit.js - 200 OK (2ms)
+
+
+Started GET "/assets/templates/contacts.js?body=1" for 127.0.0.1 at 2014-05-29 22:10:20 +0530
+Served asset /templates/contacts.js - 200 OK (2ms)
+
+
+Started GET "/assets/templates/contact_in_list.js?body=1" for 127.0.0.1 at 2014-05-29 22:10:20 +0530
+Served asset /templates/contact_in_list.js - 200 OK (2ms)
+
+
+Started GET "/assets/templates/application.js?body=1" for 127.0.0.1 at 2014-05-29 22:10:20 +0530
+Served asset /templates/application.js - 200 OK (2ms)
+
+
+Started GET "/assets/router.js?body=1" for 127.0.0.1 at 2014-05-29 22:10:20 +0530
+Served asset /router.js - 200 OK (2ms)
+
+
+Started GET "/assets/routes/contact_route.js?body=1" for 127.0.0.1 at 2014-05-29 22:10:20 +0530
+Served asset /routes/contact_route.js - 200 OK (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-29 22:10:20 +0530
+Served asset /application.js - 200 OK (74ms)
+
+
+Started GET "/assets/routes/contacts_route.js?body=1" for 127.0.0.1 at 2014-05-29 22:10:20 +0530
+Served asset /routes/contacts_route.js - 200 OK (6ms)
+
+
+Started GET "/assets/routes/contacts_new_route.js?body=1" for 127.0.0.1 at 2014-05-29 22:10:20 +0530
+Served asset /routes/contacts_new_route.js - 200 OK (2ms)
+
+
+Started GET "/assets/routes/index_route.js?body=1" for 127.0.0.1 at 2014-05-29 22:10:20 +0530
+Served asset /routes/index_route.js - 200 OK (2ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2014-05-29 22:10:21 +0530
+Processing by ContactsController#index as JSON
+  [1m[36mContact Load (0.2ms)[0m  [1mSELECT "contacts".* FROM "contacts" [0m
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/twitter/glyphicons-halflings.png" for 127.0.0.1 at 2014-05-29 22:10:21 +0530
+Served asset /twitter/glyphicons-halflings.png - 200 OK (10ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2014-05-29 22:10:50 +0530
+Processing by ContactsController#create as JSON
+  Parameters: {"contact"=>{"first_name"=>"Hari", "last_name"=>"Shankar", "email"=>"harishankards@gmail.com", "notes"=>"blah", "phone_numbers"=>[{"number"=>"9715442929", "contact_id"=>0}]}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (5.5ms)[0m  [1mINSERT INTO "contacts" ("created_at", "email", "first_name", "last_name", "notes", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 29 May 2014 16:40:50 UTC +00:00], ["email", "harishankards@gmail.com"], ["first_name", "Hari"], ["last_name", "Shankar"], ["notes", "blah"], ["updated_at", Thu, 29 May 2014 16:40:50 UTC +00:00]]
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "phone_numbers" ("contact_id", "created_at", "number", "updated_at") VALUES (?, ?, ?, ?)  [["contact_id", 1], ["created_at", Thu, 29 May 2014 16:40:50 UTC +00:00], ["number", "9715442929"], ["updated_at", Thu, 29 May 2014 16:40:50 UTC +00:00]]
+  [1m[36mPhoneNumber Load (0.2ms)[0m  [1mSELECT "phone_numbers".* FROM "phone_numbers" WHERE "phone_numbers"."contact_id" = 1[0m
+  [1m[35m (166.8ms)[0m  commit transaction
+  [1m[36mContact Load (0.2ms)[0m  [1mSELECT "contacts".* FROM "contacts" WHERE "contacts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "phone_numbers".* FROM "phone_numbers" WHERE "phone_numbers"."contact_id" = 1
+Completed 201 Created in 305ms (Views: 8.3ms | ActiveRecord: 173.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-01 12:42:02 +0530
+Connecting to database specified by database.yml
+Processing by ApplicationController#index as HTML
+  Rendered application/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 600ms (Views: 600.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/ember-data.js?body=1" for 127.0.0.1 at 2014-06-01 12:42:03 +0530
+Served asset /ember-data.js - 200 OK (17ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-01 12:42:03 +0530
+Served asset /jquery.js - 200 OK (8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-01 12:42:03 +0530
+Served asset /jquery_ujs.js - 200 OK (4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-01 12:42:03 +0530
+Served asset /application.css - 200 OK (6ms)
+
+
+Started GET "/assets/handlebars.js?body=1" for 127.0.0.1 at 2014-06-01 12:42:03 +0530
+Served asset /handlebars.js - 200 OK (4ms)
+
+
+Started GET "/assets/md5.js?body=1" for 127.0.0.1 at 2014-06-01 12:42:03 +0530
+Served asset /md5.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/ember.js?body=1" for 127.0.0.1 at 2014-06-01 12:42:03 +0530
+Served asset /ember.js - 200 OK (8ms)
+
+
+Started GET "/assets/lib/ember-extensions.js?body=1" for 127.0.0.1 at 2014-06-01 12:42:03 +0530
+Served asset /lib/ember-extensions.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/app.js?body=1" for 127.0.0.1 at 2014-06-01 12:42:03 +0530
+Served asset /app.js - 200 OK (34ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2014-06-01 12:42:03 +0530
+Served asset /store.js - 200 OK (3ms)
+
+
+Started GET "/assets/models/contact.js?body=1" for 127.0.0.1 at 2014-06-01 12:42:03 +0530
+Served asset /models/contact.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/models/phone_number.js?body=1" for 127.0.0.1 at 2014-06-01 12:42:03 +0530
+Served asset /models/phone_number.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/controllers/contact_controller.js?body=1" for 127.0.0.1 at 2014-06-01 12:42:03 +0530
+Served asset /controllers/contact_controller.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/controllers/contact_edit_controller.js?body=1" for 127.0.0.1 at 2014-06-01 12:42:03 +0530
+Served asset /controllers/contact_edit_controller.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/controllers/contacts_controller.js?body=1" for 127.0.0.1 at 2014-06-01 12:42:03 +0530
+Served asset /controllers/contacts_controller.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/controllers/contacts_new_controller.js?body=1" for 127.0.0.1 at 2014-06-01 12:42:03 +0530
+Served asset /controllers/contacts_new_controller.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/views/contact_edit_view.js?body=1" for 127.0.0.1 at 2014-06-01 12:42:03 +0530
+Served asset /views/contact_edit_view.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/views/contact_in_list_view.js?body=1" for 127.0.0.1 at 2014-06-01 12:42:03 +0530
+Served asset /views/contact_in_list_view.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/views/contact_view.js?body=1" for 127.0.0.1 at 2014-06-01 12:42:03 +0530
+Served asset /views/contact_view.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/views/contacts_new_view.js?body=1" for 127.0.0.1 at 2014-06-01 12:42:03 +0530
+Served asset /views/contacts_new_view.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/views/contacts_view.js?body=1" for 127.0.0.1 at 2014-06-01 12:42:03 +0530
+Served asset /views/contacts_view.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/helpers/forms.js?body=1" for 127.0.0.1 at 2014-06-01 12:42:03 +0530
+Served asset /helpers/forms.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/templates/_contact_edit_fields.js?body=1" for 127.0.0.1 at 2014-06-01 12:42:03 +0530
+Served asset /templates/_contact_edit_fields.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/templates/application.js?body=1" for 127.0.0.1 at 2014-06-01 12:42:03 +0530
+Served asset /templates/application.js - 200 OK (3ms)
+
+
+Started GET "/assets/templates/contact.js?body=1" for 127.0.0.1 at 2014-06-01 12:42:03 +0530
+Served asset /templates/contact.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/templates/contact_edit.js?body=1" for 127.0.0.1 at 2014-06-01 12:42:03 +0530
+Served asset /templates/contact_edit.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/templates/contact_in_list.js?body=1" for 127.0.0.1 at 2014-06-01 12:42:03 +0530
+Served asset /templates/contact_in_list.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/templates/contacts/new.js?body=1" for 127.0.0.1 at 2014-06-01 12:42:03 +0530
+Served asset /templates/contacts/new.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/templates/contacts.js?body=1" for 127.0.0.1 at 2014-06-01 12:42:03 +0530
+Served asset /templates/contacts.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/router.js?body=1" for 127.0.0.1 at 2014-06-01 12:42:03 +0530
+Served asset /router.js - 200 OK (2ms)
+
+
+Started GET "/assets/routes/contact_route.js?body=1" for 127.0.0.1 at 2014-06-01 12:42:03 +0530
+Served asset /routes/contact_route.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/routes/contacts_new_route.js?body=1" for 127.0.0.1 at 2014-06-01 12:42:03 +0530
+Served asset /routes/contacts_new_route.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/routes/contacts_route.js?body=1" for 127.0.0.1 at 2014-06-01 12:42:03 +0530
+Served asset /routes/contacts_route.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/routes/index_route.js?body=1" for 127.0.0.1 at 2014-06-01 12:42:03 +0530
+Served asset /routes/index_route.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-01 12:42:03 +0530
+Served asset /application.js - 200 OK (42ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2014-06-01 12:42:03 +0530
+Processing by ContactsController#index as JSON
+  [1m[36mContact Load (0.2ms)[0m  [1mSELECT "contacts".* FROM "contacts" [0m
+  [1m[35mPhoneNumber Load (0.1ms)[0m  SELECT "phone_numbers".* FROM "phone_numbers" WHERE "phone_numbers"."contact_id" = 1
+Completed 200 OK in 48ms (Views: 40.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/twitter/glyphicons-halflings.png" for 127.0.0.1 at 2014-06-01 12:42:04 +0530
+Served asset /twitter/glyphicons-halflings.png - 304 Not Modified (30ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2014-06-01 12:43:29 +0530
+Processing by ContactsController#create as JSON
+  Parameters: {"contact"=>{"first_name"=>"Vysakh", "last_name"=>"Sreenivasan", "email"=>"srvysakh@gmail.com", "notes"=>"Thala !", "phone_numbers"=>[{"number"=>"9043031721", "contact_id"=>0}]}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (106.9ms)[0m  INSERT INTO "contacts" ("created_at", "email", "first_name", "last_name", "notes", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 01 Jun 2014 07:13:29 UTC +00:00], ["email", "srvysakh@gmail.com"], ["first_name", "Vysakh"], ["last_name", "Sreenivasan"], ["notes", "Thala !"], ["updated_at", Sun, 01 Jun 2014 07:13:29 UTC +00:00]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "phone_numbers" ("contact_id", "created_at", "number", "updated_at") VALUES (?, ?, ?, ?)[0m  [["contact_id", 2], ["created_at", Sun, 01 Jun 2014 07:13:29 UTC +00:00], ["number", "9043031721"], ["updated_at", Sun, 01 Jun 2014 07:13:29 UTC +00:00]]
+  [1m[35mPhoneNumber Load (0.1ms)[0m  SELECT "phone_numbers".* FROM "phone_numbers" WHERE "phone_numbers"."contact_id" = 2
+  [1m[36m (129.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mContact Load (0.3ms)[0m  SELECT "contacts".* FROM "contacts" WHERE "contacts"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "phone_numbers".* FROM "phone_numbers" WHERE "phone_numbers"."contact_id" = 2[0m
+Completed 201 Created in 249ms (Views: 1.9ms | ActiveRecord: 237.5ms)
+
+
+Started PUT "/contacts/1" for 127.0.0.1 at 2014-06-01 12:43:51 +0530
+Processing by ContactsController#update as JSON
+  Parameters: {"contact"=>{"first_name"=>"Hari", "last_name"=>"Shankar", "email"=>"harishankards@gmail.com", "notes"=>"Vaalu !", "phone_numbers"=>[{"id"=>1, "number"=>"9715442929", "contact_id"=>1}]}, "id"=>"1"}
+  [1m[35mContact Load (0.1ms)[0m  SELECT "contacts".* FROM "contacts" WHERE "contacts"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  UPDATE "contacts" SET "notes" = 'Vaalu !', "updated_at" = '2014-06-01 07:13:51.624148' WHERE "contacts"."id" = 1
+  [1m[36mPhoneNumber Load (0.1ms)[0m  [1mSELECT "phone_numbers".* FROM "phone_numbers" WHERE "phone_numbers"."contact_id" = 1 AND "phone_numbers"."id" = ? LIMIT 1[0m  [["id", 1]]
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mPhoneNumber Load (0.1ms)[0m  SELECT "phone_numbers".* FROM "phone_numbers" WHERE "phone_numbers"."contact_id" = 1
+  [1m[36m (116.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mContact Load (0.1ms)[0m  SELECT "contacts".* FROM "contacts" WHERE "contacts"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "phone_numbers".* FROM "phone_numbers" WHERE "phone_numbers"."contact_id" = 1[0m
+Completed 200 OK in 124ms (Views: 1.7ms | ActiveRecord: 117.2ms)
+
+
+Started PUT "/contacts/1" for 127.0.0.1 at 2014-06-01 12:44:16 +0530
+Processing by ContactsController#update as JSON
+  Parameters: {"contact"=>{"first_name"=>"Harishankar", "last_name"=>"Ayandev", "email"=>"harishankards@gmail.com", "notes"=>"Vaalu !", "phone_numbers"=>[{"id"=>1, "number"=>"9715442929", "contact_id"=>1}]}, "id"=>"1"}
+  [1m[35mContact Load (0.1ms)[0m  SELECT "contacts".* FROM "contacts" WHERE "contacts"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  UPDATE "contacts" SET "first_name" = 'Harishankar', "last_name" = 'Ayandev', "updated_at" = '2014-06-01 07:14:16.397078' WHERE "contacts"."id" = 1
+  [1m[36mPhoneNumber Load (0.0ms)[0m  [1mSELECT "phone_numbers".* FROM "phone_numbers" WHERE "phone_numbers"."contact_id" = 1 AND "phone_numbers"."id" = ? LIMIT 1[0m  [["id", 1]]
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mPhoneNumber Load (0.1ms)[0m  SELECT "phone_numbers".* FROM "phone_numbers" WHERE "phone_numbers"."contact_id" = 1
+  [1m[36m (243.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mContact Load (0.3ms)[0m  SELECT "contacts".* FROM "contacts" WHERE "contacts"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "phone_numbers".* FROM "phone_numbers" WHERE "phone_numbers"."contact_id" = 1[0m
+Completed 200 OK in 252ms (Views: 2.6ms | ActiveRecord: 244.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-01 12:44:39 +0530
+Processing by ApplicationController#index as HTML
+  Rendered application/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 21ms (Views: 21.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-01 12:44:39 +0530
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-01 12:44:39 +0530
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/ember.js?body=1" for 127.0.0.1 at 2014-06-01 12:44:39 +0530
+Served asset /ember.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/ember-data.js?body=1" for 127.0.0.1 at 2014-06-01 12:44:39 +0530
+Served asset /ember-data.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/handlebars.js?body=1" for 127.0.0.1 at 2014-06-01 12:44:39 +0530
+Served asset /handlebars.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/models/contact.js?body=1" for 127.0.0.1 at 2014-06-01 12:44:39 +0530
+Served asset /models/contact.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/models/phone_number.js?body=1" for 127.0.0.1 at 2014-06-01 12:44:39 +0530
+Served asset /models/phone_number.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/lib/ember-extensions.js?body=1" for 127.0.0.1 at 2014-06-01 12:44:39 +0530
+Served asset /lib/ember-extensions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/app.js?body=1" for 127.0.0.1 at 2014-06-01 12:44:39 +0530
+Served asset /app.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2014-06-01 12:44:39 +0530
+Served asset /store.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-01 12:44:39 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/md5.js?body=1" for 127.0.0.1 at 2014-06-01 12:44:39 +0530
+Served asset /md5.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/controllers/contact_controller.js?body=1" for 127.0.0.1 at 2014-06-01 12:44:39 +0530
+Served asset /controllers/contact_controller.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/controllers/contact_edit_controller.js?body=1" for 127.0.0.1 at 2014-06-01 12:44:39 +0530
+Served asset /controllers/contact_edit_controller.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/controllers/contacts_controller.js?body=1" for 127.0.0.1 at 2014-06-01 12:44:39 +0530
+Served asset /controllers/contacts_controller.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/controllers/contacts_new_controller.js?body=1" for 127.0.0.1 at 2014-06-01 12:44:39 +0530
+Served asset /controllers/contacts_new_controller.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/views/contact_edit_view.js?body=1" for 127.0.0.1 at 2014-06-01 12:44:39 +0530
+Served asset /views/contact_edit_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/views/contact_in_list_view.js?body=1" for 127.0.0.1 at 2014-06-01 12:44:39 +0530
+Served asset /views/contact_in_list_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/views/contact_view.js?body=1" for 127.0.0.1 at 2014-06-01 12:44:39 +0530
+Served asset /views/contact_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/views/contacts_view.js?body=1" for 127.0.0.1 at 2014-06-01 12:44:39 +0530
+Served asset /views/contacts_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/views/contacts_new_view.js?body=1" for 127.0.0.1 at 2014-06-01 12:44:40 +0530
+Served asset /views/contacts_new_view.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/helpers/forms.js?body=1" for 127.0.0.1 at 2014-06-01 12:44:40 +0530
+Served asset /helpers/forms.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/templates/_contact_edit_fields.js?body=1" for 127.0.0.1 at 2014-06-01 12:44:40 +0530
+Served asset /templates/_contact_edit_fields.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/templates/application.js?body=1" for 127.0.0.1 at 2014-06-01 12:44:40 +0530
+Served asset /templates/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/templates/contact.js?body=1" for 127.0.0.1 at 2014-06-01 12:44:40 +0530
+Served asset /templates/contact.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/templates/contact_edit.js?body=1" for 127.0.0.1 at 2014-06-01 12:44:40 +0530
+Served asset /templates/contact_edit.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/templates/contact_in_list.js?body=1" for 127.0.0.1 at 2014-06-01 12:44:40 +0530
+Served asset /templates/contact_in_list.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/templates/contacts.js?body=1" for 127.0.0.1 at 2014-06-01 12:44:40 +0530
+Served asset /templates/contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/templates/contacts/new.js?body=1" for 127.0.0.1 at 2014-06-01 12:44:40 +0530
+Served asset /templates/contacts/new.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/router.js?body=1" for 127.0.0.1 at 2014-06-01 12:44:40 +0530
+Served asset /router.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/routes/contact_route.js?body=1" for 127.0.0.1 at 2014-06-01 12:44:40 +0530
+Served asset /routes/contact_route.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/routes/contacts_new_route.js?body=1" for 127.0.0.1 at 2014-06-01 12:44:40 +0530
+Served asset /routes/contacts_new_route.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/routes/contacts_route.js?body=1" for 127.0.0.1 at 2014-06-01 12:44:40 +0530
+Served asset /routes/contacts_route.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/routes/index_route.js?body=1" for 127.0.0.1 at 2014-06-01 12:44:40 +0530
+Served asset /routes/index_route.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-01 12:44:40 +0530
+Served asset /application.js - 304 Not Modified (7ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2014-06-01 12:44:40 +0530
+Processing by ContactsController#index as JSON
+  [1m[35mContact Load (0.2ms)[0m  SELECT "contacts".* FROM "contacts" 
+  [1m[36mPhoneNumber Load (0.1ms)[0m  [1mSELECT "phone_numbers".* FROM "phone_numbers" WHERE "phone_numbers"."contact_id" = 1[0m
+  [1m[35mPhoneNumber Load (0.1ms)[0m  SELECT "phone_numbers".* FROM "phone_numbers" WHERE "phone_numbers"."contact_id" = 2
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/contacts/2" for 127.0.0.1 at 2014-06-01 12:44:40 +0530
+Processing by ContactsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mContact Load (0.1ms)[0m  [1mSELECT "contacts".* FROM "contacts" WHERE "contacts"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mPhoneNumber Load (0.3ms)[0m  SELECT "phone_numbers".* FROM "phone_numbers" WHERE "phone_numbers"."contact_id" = 2
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/twitter/glyphicons-halflings.png" for 127.0.0.1 at 2014-06-01 12:44:40 +0530
+Served asset /twitter/glyphicons-halflings.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-01 13:04:53 +0530
+Connecting to database specified by database.yml
+Processing by ApplicationController#index as HTML
+  Rendered application/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 73ms (Views: 72.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-01 13:04:54 +0530
+Served asset /application.css - 304 Not Modified (13ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-01 13:04:54 +0530
+Served asset /jquery.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/ember.js?body=1" for 127.0.0.1 at 2014-06-01 13:04:54 +0530
+Served asset /ember.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/ember-data.js?body=1" for 127.0.0.1 at 2014-06-01 13:04:54 +0530
+Served asset /ember-data.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/md5.js?body=1" for 127.0.0.1 at 2014-06-01 13:04:54 +0530
+Served asset /md5.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/handlebars.js?body=1" for 127.0.0.1 at 2014-06-01 13:04:54 +0530
+Served asset /handlebars.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-01 13:04:54 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/lib/ember-extensions.js?body=1" for 127.0.0.1 at 2014-06-01 13:04:54 +0530
+Served asset /lib/ember-extensions.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/controllers/contact_edit_controller.js?body=1" for 127.0.0.1 at 2014-06-01 13:04:54 +0530
+Served asset /controllers/contact_edit_controller.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2014-06-01 13:04:54 +0530
+Served asset /store.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/models/contact.js?body=1" for 127.0.0.1 at 2014-06-01 13:04:54 +0530
+Served asset /models/contact.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/models/phone_number.js?body=1" for 127.0.0.1 at 2014-06-01 13:04:54 +0530
+Served asset /models/phone_number.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/controllers/contact_controller.js?body=1" for 127.0.0.1 at 2014-06-01 13:04:54 +0530
+Served asset /controllers/contact_controller.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/app.js?body=1" for 127.0.0.1 at 2014-06-01 13:04:54 +0530
+Served asset /app.js - 304 Not Modified (40ms)
+
+
+Started GET "/assets/controllers/contacts_controller.js?body=1" for 127.0.0.1 at 2014-06-01 13:04:54 +0530
+Served asset /controllers/contacts_controller.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/controllers/contacts_new_controller.js?body=1" for 127.0.0.1 at 2014-06-01 13:04:54 +0530
+Served asset /controllers/contacts_new_controller.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/views/contact_edit_view.js?body=1" for 127.0.0.1 at 2014-06-01 13:04:54 +0530
+Served asset /views/contact_edit_view.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/views/contact_in_list_view.js?body=1" for 127.0.0.1 at 2014-06-01 13:04:54 +0530
+Served asset /views/contact_in_list_view.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/views/contact_view.js?body=1" for 127.0.0.1 at 2014-06-01 13:04:54 +0530
+Served asset /views/contact_view.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/views/contacts_new_view.js?body=1" for 127.0.0.1 at 2014-06-01 13:04:54 +0530
+Served asset /views/contacts_new_view.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/views/contacts_view.js?body=1" for 127.0.0.1 at 2014-06-01 13:04:54 +0530
+Served asset /views/contacts_view.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/helpers/forms.js?body=1" for 127.0.0.1 at 2014-06-01 13:04:54 +0530
+Served asset /helpers/forms.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/templates/_contact_edit_fields.js?body=1" for 127.0.0.1 at 2014-06-01 13:04:54 +0530
+Served asset /templates/_contact_edit_fields.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/templates/application.js?body=1" for 127.0.0.1 at 2014-06-01 13:04:54 +0530
+Served asset /templates/application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/templates/contact.js?body=1" for 127.0.0.1 at 2014-06-01 13:04:54 +0530
+Served asset /templates/contact.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/templates/contact_edit.js?body=1" for 127.0.0.1 at 2014-06-01 13:04:54 +0530
+Served asset /templates/contact_edit.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/templates/contact_in_list.js?body=1" for 127.0.0.1 at 2014-06-01 13:04:54 +0530
+Served asset /templates/contact_in_list.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/templates/contacts.js?body=1" for 127.0.0.1 at 2014-06-01 13:04:54 +0530
+Served asset /templates/contacts.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/templates/contacts/new.js?body=1" for 127.0.0.1 at 2014-06-01 13:04:54 +0530
+Served asset /templates/contacts/new.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/router.js?body=1" for 127.0.0.1 at 2014-06-01 13:04:54 +0530
+Served asset /router.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/routes/contact_route.js?body=1" for 127.0.0.1 at 2014-06-01 13:04:54 +0530
+Served asset /routes/contact_route.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/routes/contacts_new_route.js?body=1" for 127.0.0.1 at 2014-06-01 13:04:54 +0530
+Served asset /routes/contacts_new_route.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/routes/contacts_route.js?body=1" for 127.0.0.1 at 2014-06-01 13:04:54 +0530
+Served asset /routes/contacts_route.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/routes/index_route.js?body=1" for 127.0.0.1 at 2014-06-01 13:04:54 +0530
+Served asset /routes/index_route.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-01 13:04:54 +0530
+Served asset /application.js - 304 Not Modified (58ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2014-06-01 13:04:54 +0530
+Processing by ContactsController#index as JSON
+  [1m[36mContact Load (0.1ms)[0m  [1mSELECT "contacts".* FROM "contacts" [0m
+  [1m[35mPhoneNumber Load (0.1ms)[0m  SELECT "phone_numbers".* FROM "phone_numbers" WHERE "phone_numbers"."contact_id" = 1
+  [1m[36mPhoneNumber Load (0.1ms)[0m  [1mSELECT "phone_numbers".* FROM "phone_numbers" WHERE "phone_numbers"."contact_id" = 2[0m
+Completed 200 OK in 32ms (Views: 25.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/contacts/2" for 127.0.0.1 at 2014-06-01 13:04:54 +0530
+Processing by ContactsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[35mContact Load (0.3ms)[0m  SELECT "contacts".* FROM "contacts" WHERE "contacts"."id" = ? LIMIT 1  [["id", "2"]]
+  [1m[36mPhoneNumber Load (0.2ms)[0m  [1mSELECT "phone_numbers".* FROM "phone_numbers" WHERE "phone_numbers"."contact_id" = 2[0m
+Completed 200 OK in 5ms (Views: 2.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/twitter/glyphicons-halflings.png" for 127.0.0.1 at 2014-06-01 13:04:54 +0530
+Served asset /twitter/glyphicons-halflings.png - 304 Not Modified (2ms)

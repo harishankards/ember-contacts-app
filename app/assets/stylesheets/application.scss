@@ -1,0 +1,43 @@
+@import "twitter/bootstrap";
+
+.navbar {
+  .brand a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+#main {
+  margin-top: 60px;
+
+  .contact-details {
+    h2 img {
+      margin-right: 15px;
+      width: 80px;
+      height: 80px;
+    }
+
+    dl.dl-horizontal {
+      dt {
+        width: 80px;
+        margin-bottom: 8px;
+      }
+      dd {
+        margin-left: 95px;
+        margin-bottom: 8px;
+      }
+    }
+  }
+
+  form {
+    .phone-number {
+      margin-bottom: 8px;
+      white-space: nowrap;
+
+      input[type="text"] {
+        width: 105px;
+      }
+    }
+  }
+}

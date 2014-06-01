@@ -1,0 +1,11 @@
+dan:
+  first_name: Dan
+  last_name: Gebhardt
+  email: dan@example.com
+  notes: Writes sample code without tests :/
+
+joe:
+  first_name: Joe
+  last_name: Blow
+  email: joe@example.com
+  notes: Lousy plumber
