@@ -1,4 +1,4 @@
-##Contacts - Rails app using ember data
+## Contacts - Rails app using ember data
 
 This is a simple Rails 4.1.1 app created to demo [Ember.js](https://github.com/emberjs/ember.js),
 [Ember-Data](https://github.com/emberjs/data) and
@@ -16,6 +16,4 @@ Assuming Ruby 1.9.2+ with bundler gem installed:
     $ bundle exec rake db:migrate
     $ rails s
 
-##Raise an issue if any ;)
-
-
+## Raise an issue if any ;)
